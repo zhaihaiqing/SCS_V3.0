@@ -37,4 +37,6 @@ scs_v3.0_sf_test_hal\board.o: ..\rtt_nano\include\rtservice.h
 scs_v3.0_sf_test_hal\board.o: ..\rtt_nano\finsh\finsh_api.h
 scs_v3.0_sf_test_hal\board.o: ../Core/Inc/main.h
 scs_v3.0_sf_test_hal\board.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+scs_v3.0_sf_test_hal\board.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+scs_v3.0_sf_test_hal\board.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 scs_v3.0_sf_test_hal\board.o: ../Core/Inc/scs_thread.h

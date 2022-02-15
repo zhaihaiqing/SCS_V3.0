@@ -123,15 +123,15 @@ int main(void)
 	rt_kprintf("Hardware Init OK!\r\n");
 	
 	
-	SW_CV_PLOAR_L();//S1：设置极性，L=正极性，H=负极性
-	SW_CV_MODE_L(); //S2：设置模式，L=电压模式，H=电流模式
-	SW_CV_OUTPUT_L();//S3：L=不输出,H=输出
+	SW_CV_PLOAR_L();//Step1：设置极性，L=正极性，H=负极性
+	SW_CV_MODE_L(); //Step2：设置模式，L=电压模式，H=电流模式
+	SW_CV_OUTPUT_L();//Step3：L=不输出,H=输出
 	
 	
-
+	rt_thread_mdelay(400);
 		
 	
-	//AD5542_Write(0.5);
+	AD5542_Write(0.5);
 	
 	scs_thread_init();
 	
@@ -395,25 +395,35 @@ void AD5542_Write( float val)
 
 static void set_ploar( int argc, char **argv)
 {
-	//rt_kprintf("argc=%d\r\n",argc);
+	char str[10]={0};
+	
+	int num=0;
+	
+	//rt_kprintf("argc=%s\r\n",argc);
 	if(argc <2)
 	{
 		rt_kprintf("Missing parameters\r\n");
 	}
-	else if(argc <2)
+	else if(argc >2)
 	{
 		rt_kprintf("Too many parameters\r\n");
 	}
 	else
 	{
-		rt_kprintf("argv=%d %s\r\n",argv[1],argv[1]);
-		if('0'==(int)argv[1])
+		strcpy(str,argv[1]);
+		num=atoi(str);
+		
+		rt_kprintf("num=%d %s\r\n",num);
+		
+		if(num==0)
 		{
-			rt_kprintf("set Ploar to +");
+			rt_kprintf("set Ploar to +\r\n");
+			SW_CV_PLOAR_L();
 		}
-		if('1'==(int)argv[1])
+		if(num==1)
 		{
-			rt_kprintf("set Ploar to -");
+			rt_kprintf("set Ploar to -\r\n");
+			SW_CV_PLOAR_H();
 		}
 	}
 	
@@ -423,17 +433,36 @@ MSH_CMD_EXPORT(set_ploar,set_ploar(0=P,1=N));
 
 static void set_mode( int argc, char **argv)
 {
+	char str[10]={0};
+	
+	int num=0;
+	
+	//rt_kprintf("argc=%s\r\n",argc);
 	if(argc <2)
 	{
 		rt_kprintf("Missing parameters\r\n");
 	}
-	else if(argc <2)
+	else if(argc >2)
 	{
 		rt_kprintf("Too many parameters\r\n");
 	}
 	else
 	{
+		strcpy(str,argv[1]);
+		num=atoi(str);
 		
+		rt_kprintf("num=%d %s\r\n",num);
+		
+		if(num==0)
+		{
+			rt_kprintf("set Ploar to Voltage\r\n");
+			SW_CV_MODE_L();
+		}
+		if(num==1)
+		{
+			rt_kprintf("set Mode to Current\r\n");
+			SW_CV_MODE_H();
+		}
 	}
 }
 MSH_CMD_EXPORT(set_mode,set_mode(0=V,1=C));
@@ -441,17 +470,36 @@ MSH_CMD_EXPORT(set_mode,set_mode(0=V,1=C));
 
 static void set_out( int argc, char **argv)
 {
+	char str[10]={0};
+	
+	int num=0;
+	
+	//rt_kprintf("argc=%s\r\n",argc);
 	if(argc <2)
 	{
 		rt_kprintf("Missing parameters\r\n");
 	}
-	else if(argc <2)
+	else if(argc >2)
 	{
 		rt_kprintf("Too many parameters\r\n");
 	}
 	else
 	{
+		strcpy(str,argv[1]);
+		num=atoi(str);
 		
+		rt_kprintf("num=%d %s\r\n",num);
+		
+		if(num==0)
+		{
+			rt_kprintf("set Output to (Not)\r\n");
+			SW_CV_OUTPUT_L();
+		}
+		if(num==1)
+		{
+			rt_kprintf("set Output to (Yes)\r\n");
+			SW_CV_OUTPUT_H();
+		}
 	}
 }
 MSH_CMD_EXPORT(set_out,set_out(0=Not Output,1=Output));
@@ -465,57 +513,59 @@ MSH_CMD_EXPORT(set_out,set_out(0=Not Output,1=Output));
 
 static void set_dac1( int argc, char **argv)
 {
+	char str[10]={0};
 	unsigned short reg_val;
+	int num=0;
+	float val=0;
+	uint8_t i=0;
 	
-	unsigned char i=0;
-	unsigned int val=0;
-	//算要写入的值
-	
-	
+	//rt_kprintf("argc=%s\r\n",argc);
 	if(argc <2)
 	{
 		rt_kprintf("Missing parameters\r\n");
 	}
-	else if(argc <2)
+	else if(argc >10)
 	{
 		rt_kprintf("Too many parameters\r\n");
 	}
 	else
 	{
+		strcpy(str,argv[1]);
+		num=atoi(str);
 		
-	}
+		rt_kprintf("num=%d %s\r\n",num);
+		
+		val=1.0*num/1000.0;
+		
+		reg_val=(val*65536.0/4.096);
+		
+		DAC_LDAC_H();
 	
+		DAC_CS1_L();
+		__nop();__nop();
 	
-	
-	
-	reg_val=(val*65536.0/4.096);
-	
-	DAC_LDAC_H();
-	
-	DAC_CS1_L();
-	__nop();__nop();
-	
-	for(i=0;i<16;i++)
-	{
-		if(((reg_val<<i)&0x8000)==0x8000) 
+		for(i=0;i<16;i++)
 		{
-			DAC_SDIN_H();
+			if(((reg_val<<i)&0x8000)==0x8000) 
+			{
+				DAC_SDIN_H();
+			}
+			else
+			{
+				DAC_SDIN_L();
+			}
+			__nop();__nop();
+			DAC_SCK_L();
+			__nop();__nop();
+			DAC_SCK_H();
+			__nop();__nop();
 		}
-		else
-		{
-			DAC_SDIN_L();
-		}
+		
 		__nop();__nop();
-		DAC_SCK_L();
-		__nop();__nop();
-		DAC_SCK_H();
-		__nop();__nop();
+		DAC_LDAC_L();
+		
+		DAC_CS1_H();
 	}
-	
-	__nop();__nop();
-	DAC_LDAC_L();
-	
-	DAC_CS1_H();
 }
 
 
@@ -529,54 +579,59 @@ MSH_CMD_EXPORT(set_dac1,Set_DAC1(Voltage) Val (mV));
 
 static void set_dac2( int argc, char **argv)
 {
+	char str[10]={0};
 	unsigned short reg_val;
+	int num=0;
+	float val=0;
+	uint8_t i=0;
 	
-	unsigned char i=0;
-	unsigned int val=0;
-	//算要写入的值
-	
-	
+	//rt_kprintf("argc=%s\r\n",argc);
 	if(argc <2)
 	{
 		rt_kprintf("Missing parameters\r\n");
 	}
-	else if(argc <2)
+	else if(argc >10)
 	{
 		rt_kprintf("Too many parameters\r\n");
 	}
 	else
 	{
+		strcpy(str,argv[1]);
+		num=atoi(str);
 		
-	}
+		rt_kprintf("num=%d %s\r\n",num);
+		
+		val=1.0*num/1000.0;
+		
+		reg_val=(val*65536.0/4.096);
+		
+		DAC_LDAC_H();
 	
-	reg_val=(val*65536.0/4.096);
+		DAC_CS2_L();
+		__nop();__nop();
 	
-	DAC_LDAC_H();
-	
-	DAC_CS2_L();
-	__nop();__nop();
-	
-	for(i=0;i<16;i++)
-	{
-		if(((reg_val<<i)&0x8000)==0x8000) 
+		for(i=0;i<16;i++)
 		{
-			DAC_SDIN_H();
+			if(((reg_val<<i)&0x8000)==0x8000) 
+			{
+				DAC_SDIN_H();
+			}
+			else
+			{
+				DAC_SDIN_L();
+			}
+			__nop();__nop();
+			DAC_SCK_L();
+			__nop();__nop();
+			DAC_SCK_H();
+			__nop();__nop();
 		}
-		else
-		{
-			DAC_SDIN_L();
-		}
+		
 		__nop();__nop();
-		DAC_SCK_L();
-		__nop();__nop();
-		DAC_SCK_H();
-		__nop();__nop();
+		DAC_LDAC_L();
+		
+		DAC_CS2_H();
 	}
-	
-	__nop();__nop();
-	DAC_LDAC_L();
-	
-	DAC_CS2_H();
 }
 MSH_CMD_EXPORT(set_dac2,Set_DAC2(Current) Val (mA));
 

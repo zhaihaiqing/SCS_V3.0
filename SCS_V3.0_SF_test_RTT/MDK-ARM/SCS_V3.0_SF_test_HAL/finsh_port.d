@@ -37,4 +37,6 @@ scs_v3.0_sf_test_hal\finsh_port.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx
 scs_v3.0_sf_test_hal\finsh_port.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 scs_v3.0_sf_test_hal\finsh_port.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 scs_v3.0_sf_test_hal\finsh_port.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+scs_v3.0_sf_test_hal\finsh_port.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+scs_v3.0_sf_test_hal\finsh_port.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 scs_v3.0_sf_test_hal\finsh_port.o: ../Core/Inc/scs_thread.h

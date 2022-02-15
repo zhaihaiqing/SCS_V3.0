@@ -28,6 +28,8 @@ scs_v3.0_sf_test_hal\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1
 scs_v3.0_sf_test_hal\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 scs_v3.0_sf_test_hal\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 scs_v3.0_sf_test_hal\stm32f1xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+scs_v3.0_sf_test_hal\stm32f1xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+scs_v3.0_sf_test_hal\stm32f1xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 scs_v3.0_sf_test_hal\stm32f1xx_it.o: ..\rtt_nano\include\rtthread.h
 scs_v3.0_sf_test_hal\stm32f1xx_it.o: ..\rtt_nano\rtconfig.h
 scs_v3.0_sf_test_hal\stm32f1xx_it.o: ..\rtt_nano\finsh\finsh_config.h

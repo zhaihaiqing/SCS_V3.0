@@ -1,7 +1,7 @@
 Dependencies for Project 'SCS_V3.0_SF_test_RTT', Target 'SCS_V3.0_SF_test_HAL': (DO NOT MODIFY !)
 F (startup_stm32f103xe.s)(0x62052E8C)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_SCS_V3.0_SF_test_HAL-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include--pd "__UVISION_VERSION SETA 525" --pd "_RTE_ SETA 1" --pd "STM32F10X_HD SETA 1"--list startup_stm32f103xe.lst --xref -o scs_v3.0_sf_test_hal\startup_stm32f103xe.o --depend scs_v3.0_sf_test_hal\startup_stm32f103xe.d)
-F (../Core/Src/main.c)(0x620A8A5F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\rtt_nano\include -I ..\rtt_nano\include\libc -I ..\rtt_nano\finsh -I ..\rtt_nano\device -I ..\rtt_nano-I.\RTE\_SCS_V3.0_SF_test_HAL-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o scs_v3.0_sf_test_hal\main.o --omf_browse scs_v3.0_sf_test_hal\main.crf --depend scs_v3.0_sf_test_hal\main.d)
-I (../Core/Inc/main.h)(0x620A7F41)
+F (../Core/Src/main.c)(0x620BB846)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\rtt_nano\include -I ..\rtt_nano\include\libc -I ..\rtt_nano\finsh -I ..\rtt_nano\device -I ..\rtt_nano-I.\RTE\_SCS_V3.0_SF_test_HAL-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o scs_v3.0_sf_test_hal\main.o --omf_browse scs_v3.0_sf_test_hal\main.crf --depend scs_v3.0_sf_test_hal\main.d)
+I (../Core/Inc/main.h)(0x620BB228)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x618D4A2B)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x62052E89)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x618D4A2B)
@@ -29,6 +29,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x618D4A2B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x618D4A2B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x618D4A2B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (..\rtt_nano\include\rtthread.h)(0x60ED86CD)
 I (..\rtt_nano\rtconfig.h)(0x620A7A8A)
 I (..\rtt_nano\finsh\finsh_config.h)(0x60ED86CD)
@@ -39,7 +41,7 @@ I (..\rtt_nano\include\rtservice.h)(0x60ED86CD)
 I (..\rtt_nano\finsh\finsh_api.h)(0x60ED86CD)
 I (../Core/Inc/scs_thread.h)(0x620A8018)
 F (..\Core\Src\scs_thread.c)(0x620A800F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\rtt_nano\include -I ..\rtt_nano\include\libc -I ..\rtt_nano\finsh -I ..\rtt_nano\device -I ..\rtt_nano-I.\RTE\_SCS_V3.0_SF_test_HAL-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o scs_v3.0_sf_test_hal\scs_thread.o --omf_browse scs_v3.0_sf_test_hal\scs_thread.crf --depend scs_v3.0_sf_test_hal\scs_thread.d)
-I (../Core/Inc/main.h)(0x620A7F41)
+I (../Core/Inc/main.h)(0x620BB228)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x618D4A2B)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x62052E89)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x618D4A2B)
@@ -67,6 +69,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x618D4A2B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x618D4A2B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x618D4A2B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (..\rtt_nano\include\rtthread.h)(0x60ED86CD)
 I (..\rtt_nano\rtconfig.h)(0x620A7A8A)
 I (..\rtt_nano\finsh\finsh_config.h)(0x60ED86CD)
@@ -77,7 +81,7 @@ I (..\rtt_nano\include\rtservice.h)(0x60ED86CD)
 I (..\rtt_nano\finsh\finsh_api.h)(0x60ED86CD)
 I (../Core/Inc/scs_thread.h)(0x620A8018)
 F (../Core/Src/stm32f1xx_it.c)(0x620A7A38)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\rtt_nano\include -I ..\rtt_nano\include\libc -I ..\rtt_nano\finsh -I ..\rtt_nano\device -I ..\rtt_nano-I.\RTE\_SCS_V3.0_SF_test_HAL-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o scs_v3.0_sf_test_hal\stm32f1xx_it.o --omf_browse scs_v3.0_sf_test_hal\stm32f1xx_it.crf --depend scs_v3.0_sf_test_hal\stm32f1xx_it.d)
-I (../Core/Inc/main.h)(0x620A7F41)
+I (../Core/Inc/main.h)(0x620BB228)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x618D4A2B)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x62052E89)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x618D4A2B)
@@ -105,6 +109,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x618D4A2B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x618D4A2B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x618D4A2B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (..\rtt_nano\include\rtthread.h)(0x60ED86CD)
 I (..\rtt_nano\rtconfig.h)(0x620A7A8A)
 I (..\rtt_nano\finsh\finsh_config.h)(0x60ED86CD)
@@ -116,7 +122,7 @@ I (..\rtt_nano\finsh\finsh_api.h)(0x60ED86CD)
 I (../Core/Inc/scs_thread.h)(0x620A8018)
 I (../Core/Inc/stm32f1xx_it.h)(0x62052E89)
 F (../Core/Src/stm32f1xx_hal_msp.c)(0x62052E89)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\rtt_nano\include -I ..\rtt_nano\include\libc -I ..\rtt_nano\finsh -I ..\rtt_nano\device -I ..\rtt_nano-I.\RTE\_SCS_V3.0_SF_test_HAL-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o scs_v3.0_sf_test_hal\stm32f1xx_hal_msp.o --omf_browse scs_v3.0_sf_test_hal\stm32f1xx_hal_msp.crf --depend scs_v3.0_sf_test_hal\stm32f1xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x620A7F41)
+I (../Core/Inc/main.h)(0x620BB228)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x618D4A2B)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x62052E89)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x618D4A2B)
@@ -144,6 +150,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x618D4A2B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x618D4A2B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x618D4A2B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (..\rtt_nano\include\rtthread.h)(0x60ED86CD)
 I (..\rtt_nano\rtconfig.h)(0x620A7A8A)
 I (..\rtt_nano\finsh\finsh_config.h)(0x60ED86CD)
@@ -621,8 +629,10 @@ I (..\rtt_nano\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599ECD2A)
 I (..\rtt_nano\include\rtservice.h)(0x60ED86CD)
 I (..\rtt_nano\finsh\finsh_api.h)(0x60ED86CD)
-I (../Core/Inc/main.h)(0x620A7F41)
+I (../Core/Inc/main.h)(0x620BB228)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (../Core/Inc/scs_thread.h)(0x620A8018)
 F (..\rtt_nano\rtconfig.h)(0x620A7A8A)()
 F (..\rtt_nano\clock.c)(0x60ED86CD)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\rtt_nano\include -I ..\rtt_nano\include\libc -I ..\rtt_nano\finsh -I ..\rtt_nano\device -I ..\rtt_nano-I.\RTE\_SCS_V3.0_SF_test_HAL-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o scs_v3.0_sf_test_hal\clock.o --omf_browse scs_v3.0_sf_test_hal\clock.crf --depend scs_v3.0_sf_test_hal\clock.d)
@@ -817,7 +827,7 @@ I (..\rtt_nano\include\rtdef.h)(0x60ED86CD)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599ECD2A)
 I (..\rtt_nano\include\rtservice.h)(0x60ED86CD)
 I (..\rtt_nano\finsh\finsh_api.h)(0x60ED86CD)
-I (../Core/Inc/main.h)(0x620A7F41)
+I (../Core/Inc/main.h)(0x620BB228)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x618D4A2B)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x62052E89)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x618D4A2B)
@@ -845,6 +855,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x618D4A2B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x618D4A2B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x618D4A2B)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599ECD2C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599ECD2C)
 I (../Core/Inc/scs_thread.h)(0x620A8018)
 F (..\rtt_nano\finsh\msh.c)(0x60ED86CD)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\rtt_nano\include -I ..\rtt_nano\include\libc -I ..\rtt_nano\finsh -I ..\rtt_nano\device -I ..\rtt_nano-I.\RTE\_SCS_V3.0_SF_test_HAL-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o scs_v3.0_sf_test_hal\msh.o --omf_browse scs_v3.0_sf_test_hal\msh.crf --depend scs_v3.0_sf_test_hal\msh.d)
 I (..\rtt_nano\include\rtthread.h)(0x60ED86CD)
